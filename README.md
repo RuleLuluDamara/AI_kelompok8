@@ -1,4 +1,4 @@
-# InformedSearch_Kelompok8
+# InformedSearch
 
 | Nama                      | NRP           |
 |---------------------------|---------------|
@@ -6,3 +6,4 @@
 |Adrian Karuna Soetikno     |5025211019     |
 |Rule Lulu Damara           |5025211050     |
 |Andrian                    |5025211279     |
+
