@@ -1,3 +1,6 @@
+import time
+
+
 def evaluate_state(board):
     # Mengevaluasi kondisi board saat ini, return 1 jika kondisi menang,
     # return -1 jika kondisi kalahse.
@@ -45,12 +48,6 @@ def minimax(board, depth, maximizing_player):
         return min_score
 
 
-def solve_eight_queens():
-    board = [-1] * 8  # Inisaliasi Board dengan cell kosong
-    solve(board, 0)
-    return board
-
-
 def solve(board, row):
     if row == len(board):
         return True
@@ -84,12 +81,21 @@ def print_board(board):
 
 
 def main():
-    solution = solve_eight_queens()
-    if solution:
-        print("Solution:")
-        print_board(solution)
-    else:
-        print("No solution found.")
+    board = [-1] * 8  # Inisaliasi board dengan cell kosong
+
+    num_runs = 10  # Jumlah running untuk mencari rata rata waktu
+    total_time = 0
+    
+    for _ in range(num_runs):
+        start_time = time.time()
+        solve(board, 0)
+        end_time = time.time()
+        total_time += end_time - start_time
+
+    print("Solution:")
+    print_board(board)
+    elapsed_time = total_time / num_runs
+    print("Average time taken: {:.5f} seconds".format(elapsed_time))
 
 
 if __name__ == "__main__":
